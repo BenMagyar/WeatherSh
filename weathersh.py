@@ -29,7 +29,7 @@ def condition_color(cond):
 	else:
 		return Color.HEADER
 
-location =  "'" + sys.argv[1] + "'"
+location =  "'" + "".join(sys.argv[1:]) + "'"
 woeidUrl = ("http://query.yahooapis.com/v1/public/yql?q="
 						"select%20woeid%20"
 						"from%20geo.places%20"
