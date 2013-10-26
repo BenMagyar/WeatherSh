@@ -42,10 +42,10 @@ woeidData = json.load(urllib2.urlopen(woeidUrl))
 woeid = woeidData['query']['results']['place']['woeid']
 
 weatherURL = ("http://query.yahooapis.com/v1/public/yql?q="
-			  "select%20*%20"
-			  "from%20weather.forecast%20"
-			  "where%20woeid%3D{0}"
-			  "&format=json").format(woeid)
+			"select%20*%20"
+			"from%20weather.forecast%20"
+			"where%20woeid%3D{0}"
+			"&format=json").format(woeid)
 
 data = json.load(urllib2.urlopen(weatherURL));
 weather = data['query']['results']['channel']
@@ -53,33 +53,33 @@ current = weather['item']['condition']
 forecast = weather['item']['forecast']
 
 print "\nCurrently: {0}{1}{2}F and {3}{4}{5}.".format(
-			temp_color(current['temp']), 
-			current['temp'], 
-			Color.ENDC, 
-			condition_color(current['text']),
-			current['text'], 
-			Color.ENDC
-		) 
+		temp_color(current['temp']), 
+		current['temp'], 
+		Color.ENDC, 
+		condition_color(current['text']),
+		current['text'], 
+		Color.ENDC
+	) 
 
 print "Expected conditions: {0}{1}{2}{3}/{4}{5}F with conditions being {6}{7}{8}\n".format(
-			temp_color(forecast[0]['high']),
-			forecast[0]['high'],
-			Color.ENDC,
-			temp_color(forecast[0]['low']),
-			forecast[0]['low'],
-			Color.ENDC,
-			condition_color(forecast[0]['text']),
-			forecast[0]['text'],
-			Color.ENDC
-		)
+		temp_color(forecast[0]['high']),
+		forecast[0]['high'],
+		Color.ENDC,
+		temp_color(forecast[0]['low']),
+		forecast[0]['low'],
+		Color.ENDC,
+		condition_color(forecast[0]['text']),
+		forecast[0]['text'],
+		Color.ENDC
+	)
 
 for i in range(1, 5):
 	print "{0} | {1}/{2}F {3}".format(
-				forecast[i]['day'],
-				forecast[i]['high'],
-				forecast[i]['low'],
-				forecast[i]['text']
-			)
+			forecast[i]['day'],
+			forecast[i]['high'],
+			forecast[i]['low'],
+			forecast[i]['text']
+		)
 
 
 
