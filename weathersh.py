@@ -61,7 +61,7 @@ print "\nCurrently: {0}{1}{2}F and {3}{4}{5}.".format(
 		Color.ENDC
 	) 
 
-print "Expected conditions: {0}{1}{2}{3}/{4}{5}F with conditions being {6}{7}{8}\n".format(
+print "Expected conditions: {0}{1}{2}/{3}{4}{5}F with conditions being {6}{7}{8}\n".format(
 		temp_color(forecast[0]['high']),
 		forecast[0]['high'],
 		Color.ENDC,
